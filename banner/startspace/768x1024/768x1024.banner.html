@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Startspace - 768x1024</title>
+    <meta name="CAMPAIGN NAME - 300x250" content="width=300,height=250">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+  </head>
+  <body>
+
+    <div id="container" href="https://www.slv.vic.gov.au/explore" onclick="clickthrough();">
+
+      <img id="logo-ss" src="./assets/logo-ss.png">
+
+      <!-- Frame 01 -->
+      <div id="frame-1" class="frame">
+        <div class="img obj"></div>
+        <div class="text obj"></div>
+      </div>
+
+      <!-- Frame 02 -->
+      <div id="frame-2" class="frame">
+        <div class="img obj"></div>
+        <div class="text obj"></div>
+      </div>
+
+      <!-- Endframe -->
+      <div id="frame-end" class="frame">
+        <div class="obj text"></div>
+        <div class="obj cta">
+          <button></button>
+        </div>
+        <div class="footer-logo obj"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script type="text/javascript">
+
+      function addEventListeners() {
+        document.getElementById("container").addEventListener("click", clickthrough);
+      }
+
+      function clickthrough() {
+        EB.clickthrough();
+      }(function () {
+
+        var tl = new TimelineMax({repeat: 2, repeatDelay: 1, force3D: true});
+
+        // Frame 01
+        tl.from('#frame-1 .img', 1, {
+          opacity: 0,
+          x: -20,
+          ease: Power2.easeOut
+        }).from('#frame-1 .text', 1, {
+          opacity: 0,
+          delay: -1
+        }).to('#frame-1 .img', 1, {
+          opacity: 0,
+          x: 20,
+          delay: 2
+        }).to('#frame-1 .text', 1, {
+          opacity: 0,
+          delay: -1
+        })
+
+        // Frame 02
+          .from('#frame-2 .img', 1, {
+          opacity: 0,
+          x: -20,
+          ease: Power2.easeOut
+        }).from('#frame-2 .text', 1, {
+          opacity: 0,
+          delay: -1
+        }).to('#frame-2 .img', 1, {
+          opacity: 0,
+          delay: 2,
+          x: 20
+        }).to('#frame-2 .text', 1, {
+          opacity: 0,
+          delay: -1
+        })
+
+        // Endframe
+          .from('#frame-end', 1, {
+          opacity: 0,
+          ease: Power2.easeOut
+        }, "endframe").from('button', 2.5, {
+          scale: 0,
+          ease: Elastic.easeOut.config(1, 0.3)
+        }, "endframe")
+
+      }());
+    </script>
+  </body>
+</html>
