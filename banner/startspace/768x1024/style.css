@@ -54,8 +54,15 @@ body {
 #frame-1 .text {
   width: 388px;
   height: 192px;
-  background-image: url('assets/text-1.png');
   margin-bottom: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#frame-1 .text .line {
+  zoom:50%;
+  text-align: center;
 }
 
 #frame-2 .img {
