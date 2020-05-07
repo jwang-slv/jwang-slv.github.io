@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+}
+
+img {
+  zoom: 50%;
+}
+
+
+#container {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(0,0,0,0.83);
+}
+
+.obj {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top:0;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slv-logo {
+  margin-top: 18px;
+}
+
+#frame-1, #frame-6 {
+  background: rgba(163,213,208,1);
+}
+
+#frame-1 .text {
+  margin-top: 85px;
+}
+
+#frame-2 .text {
+  margin-top: 122px;
+}
+
+#frame-4 .text {
+  margin-top: 129px;
+}
+
+#frame-6 .cv-logo{
+  margin-top: 190px;
+}
+
+#frame-6 .cta{
+  margin-top: 127px;
+  width: 130px;
+  height: 32px;
+}
+
+#frame-6 .text{
+  margin-top: 93px;
+}
+
+
+button {
+  display: block;
+  background-image: url('assets/cta.png');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+
+button:hover {
+  cursor: pointer;
+  /* CHANGE BUTTON HOVER COLOUR/OPACITY/ANIMATION */
+  opacity: 0.9
+}

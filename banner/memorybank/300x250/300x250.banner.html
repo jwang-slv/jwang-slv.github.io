@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Startspace - 300x250</title>
+		<meta name="CAMPAIGN NAME - 300x250" content="width=300,height=250">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+	</head>
+	<body>
+
+		<div id="container" href="https://www.slv.vic.gov.au/explore" onclick="clickthrough();">
+
+			<div id="frame-1" class="frame obj">
+				<div class="slv-logo obj"><img src="assets/slv-logo.png"/></div>
+				<div class="text obj">
+					<img src="assets/text-1.png"/>
+				</div>
+			</div>
+
+			<div id="frame-2" class="frame obj">
+				<div class="slv-logo obj"><img src="assets/slv-logo-white.png"/></div>
+				<div class="text obj">
+					<img src="assets/text-2.png"/>
+				</div>
+			</div>
+
+			<div id="frame-3" class="frame obj">
+				<img src="assets/image-1.jpg"/>
+			</div>
+
+			<div id="frame-4" class="frame obj">
+				<div class="slv-logo obj"><img src="assets/slv-logo-white.png"/></div>
+				<div class="text obj">
+					<img src="assets/text-3.png"/>
+				</div>
+			</div>
+
+			<div id="frame-5" class="frame obj">
+				<img src="assets/image-2.jpg"/>
+			</div>
+
+			<div id="frame-6" class="frame obj">
+				<div class="slv-logo obj"><img src="assets/slv-logo.png"/></div>
+				<div class="text obj">
+					<img src="assets/text-4.png"/>
+				</div>
+				<div class="cta obj">
+					<button></button>
+				</div>
+				<div class="cv-logo obj"><img src="assets/cv-logo.png"/></div>
+
+			</div>
+
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+		<script type="text/javascript">
+
+			function addEventListeners() {
+				document.getElementById("container").addEventListener("click", clickthrough);
+			}
+
+			function clickthrough() {
+				EB.clickthrough();
+			}(function () {
+
+				var tl = new TimelineMax({repeat: 2, repeatDelay: 1, force3D: true});
+
+				// Frame 01 Frame 01
+				tl.from('#frame-1', 2, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-1', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 02
+					.from('#frame-2', 1, {
+					opacity: 0,
+					delay: 0
+				}).from('#frame-2 .text', 1, {
+					opacity: 0,
+					delay: -2
+				}).to('#frame-2', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 03
+					.from('#frame-3', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-3', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 04
+					.from('#frame-4', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-4', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 05
+					.from('#frame-5', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-5', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 06
+					.from('#frame-6', 1, {
+					opacity: 0,
+					ease: Power2.easeOut
+				}).from('button', 2.5, {
+					scale: 0,
+					ease: Elastic.easeOut.config(1, 0.3)
+				}, "endframe")
+
+			}());
+		</script>
+	</body>
+</html>
