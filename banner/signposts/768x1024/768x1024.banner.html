@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Signposts - 768x1024</title>
+		<meta name="Signposts - 768x1024" content="width=768,height=1024">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+	</head>
+	<body>
+
+		<div id="container" href="https://www.slv.vic.gov.au/explore" onclick="clickthrough();">
+
+			<div class="logo">
+				<img src="assets/logo.png"/>
+			</div>
+
+			<!-- Frame 01 -->
+			<div id="frame-1" class="frame obj">
+				<div class="item item-1 obj">
+					<img src="assets/signposts.png"/>
+				</div>
+				<div class="item item-2 obj">
+					<img src="assets/text-1.png"/>
+				</div>
+			</div>
+			<div id="frame-2">
+				<div class="item item-1 obj">
+					<img src="assets/text-2.png"/>
+				</div>
+			</div>
+			<div id="frame-3">
+				<div class="item item-1 obj">
+					<img src="assets/text-3.png"/>
+				</div>
+			</div>
+
+			<div id="frame-4" class="frame obj">
+				<div class="item item-1 obj">
+					<img src="assets/signposts.png"/>
+				</div>
+				<div class="item item-2 cta obj">
+					<button><img src="assets/cta.png"/></button>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+		<script type="text/javascript">
+
+			function addEventListeners() {
+				document.getElementById("container").addEventListener("click", clickthrough);
+			}
+
+			function clickthrough() {
+				EB.clickthrough();
+			}(function () {
+
+				var tl = new TimelineMax({repeat: 2, repeatDelay: 1, force3D: true});
+
+				// Frame 01
+				tl.from('#frame-1 .item-1', 1, {
+					opacity: 0,
+					delay: 0
+				}).from('#frame-1 .item-2', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-1', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 02
+					.from('#frame-2 .item-1', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-2', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 03
+					.from('#frame-3 .item-1', 1, {
+					opacity: 0,
+					delay: 0
+				}).to('#frame-3 .item-1', 1, {
+					opacity: 0,
+					delay: 2
+				})
+
+				// Frame 04
+					.from('#frame-4 .item-1', 1, {
+					opacity: 0,
+					ease: Power2.easeOut
+				}).from('button', 1.5, {
+					scale: 0,
+					ease: Elastic.easeOut.config(1, 0.3)
+				}, "endframe")
+
+			}());
+		</script>
+	</body>
+</html>
